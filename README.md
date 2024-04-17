@@ -1,2 +1,2 @@
-# Java_Projects
-These are all of my java projects
+# Java Projects
+These are most of my Java projects that I've worked on over the years
