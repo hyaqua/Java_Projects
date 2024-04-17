@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab_6.HelloController">
+   <children>
+      <ScrollPane fx:id="scroll" layoutX="4.0" layoutY="4.0" prefHeight="392.0" prefWidth="550.0" style="-fx-background-color: transparent;">
+         <content>
+            <TableView fx:id="Table" prefHeight="375.0" prefWidth="548.0">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="29.0" text="ID" />
+                <TableColumn fx:id="first_name" prefWidth="85.0" text="First Name" />
+                  <TableColumn fx:id="last_name" prefWidth="96.0" text="Last Name" />
+                  <TableColumn fx:id="email" prefWidth="101.0" text="email" />
+                  <TableColumn fx:id="gender" prefWidth="101.0" text="gender" />
+                  <TableColumn fx:id="country" prefWidth="70.0" text="Country" />
+                  <TableColumn fx:id="domain" prefWidth="65.0" text="Domain" />
+                  <TableColumn fx:id="birth_date" prefWidth="98.0" text="Birth date" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER" layoutX="4.0" layoutY="396.0" prefHeight="139.0" prefWidth="550.0" spacing="100.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <Label text="Filter by date of birth" />
+                  <DatePicker fx:id="fromDate" promptText="From" />
+                  <DatePicker fx:id="toDate" promptText="To" />
+                  <Button mnemonicParsing="false" onAction="#filterButton" text="Filter" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <Label text="Sort by field" />
+                  <ChoiceBox fx:id="sortField" prefWidth="150.0" />
+                  <ChoiceBox fx:id="Direction" prefWidth="150.0" />
+                  <Button mnemonicParsing="false" onAction="#sortButton" text="Sort" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</Pane>

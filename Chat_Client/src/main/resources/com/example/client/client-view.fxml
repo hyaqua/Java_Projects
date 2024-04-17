@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.ClientController">
+   <children>
+      <ScrollPane fx:id="MsgArea" layoutY="-1.0" prefHeight="352.0" prefWidth="600.0" style="-fx-background-color: transparent;">
+         <content>
+            <VBox fx:id="mesagebox" prefHeight="330.0" prefWidth="585.0" />
+         </content>
+      </ScrollPane>
+      <Line endX="600.0" endY="357.0" layoutY="-5.0" startY="357.0" stroke="#b9b9b9" strokeType="OUTSIDE" strokeWidth="0.8" />
+      <Line endX="600.0" endY="357.0" layoutY="-5.0" startY="357.0" stroke="#838383" strokeType="OUTSIDE" strokeWidth="0.5" />
+      <TextField fx:id="messageEntry" layoutX="14.0" layoutY="361.0" onAction="#sendMsg" prefHeight="25.0" prefWidth="458.0" promptText="Enter your message" />
+      <Button fx:id="btn" layoutX="481.0" layoutY="361.0" mnemonicParsing="false" onAction="#sendMsg" prefHeight="25.0" prefWidth="105.0" text="Send Message" />
+   </children>
+</Pane>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckListView?>
+
+<TabPane fx:id="tabai" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentai.FirstController">
+   <tabs>
+      <Tab text="Add Student">
+         <content>
+            <Pane prefHeight="750.0" prefWidth="1000.0">
+               <children>
+                  <Button fx:id="addStudent" layoutX="450.0" layoutY="454.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#StudentAdd" prefHeight="40.0" prefWidth="100.0" text="Pridėti" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="name" layoutX="400.0" layoutY="227.0" prefHeight="33.0" prefWidth="200.0" promptText="Vardas">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="id" layoutX="400.0" layoutY="310.0" prefHeight="33.0" prefWidth="200.0" promptText="Identifikacinis numeris">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="importuoti" layoutX="869.0" layoutY="14.0" mnemonicParsing="false" onAction="#RunImport" prefHeight="40.0" prefWidth="117.0" text="Importuoti">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </content>
+      </Tab>
+      <Tab text="Add Group">
+         <content>
+            <Pane prefHeight="750.0" prefWidth="1000.0">
+               <children>
+                  <Button fx:id="addStudent1" layoutX="450.0" layoutY="454.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addGroup" prefHeight="40.0" prefWidth="100.0" text="Pridėti" />
+                  <TextField fx:id="groupName" layoutX="400.0" layoutY="227.0" prefHeight="33.0" prefWidth="200.0" promptText="Grupės pavadinimas">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </Pane>
+         </content>
+      </Tab>
+      <Tab text="Studentų grupės">
+         <content>
+            <Pane fx:id="addStudentsTab" prefHeight="750.0" prefWidth="1000.0">
+               <children>
+                  <CheckListView fx:id="GroupStudentList1" layoutX="346.0" layoutY="166.0" prefHeight="388.0" prefWidth="315.0" />
+                  <Label layoutX="454.0" layoutY="131.0" text="Studentai">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="groupAddStudents" layoutX="454.0" layoutY="587.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addStudentsToGroup" prefHeight="40.0" prefWidth="100.0" text="Pridėti" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <ChoiceBox fx:id="selectedGroup1" layoutX="410.0" layoutY="77.0" prefHeight="31.0" prefWidth="186.0" />
+                  <Label layoutX="413.0" layoutY="42.0" text="Pasirinkite Grupe">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </content>
+      </Tab>
+      <Tab fx:id="setAttendanceTab" text="Nustatyti Lankomumą">
+         <content>
+            <Pane prefHeight="750.0" prefWidth="1000.0">
+               <children>
+                  <CheckListView fx:id="GroupStudentList" layoutX="346.0" layoutY="166.0" prefHeight="388.0" prefWidth="315.0" />
+                  <DatePicker fx:id="GroupDate" layoutX="367.0" layoutY="604.0" prefHeight="39.0" prefWidth="271.0" />
+                  <Label layoutX="454.0" layoutY="131.0" text="Studentai">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="475.0" layoutY="560.0" prefHeight="44.0" prefWidth="54.0" text="Data">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="groupSetAttendance" layoutX="450.0" layoutY="671.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#GroupStudentsAdd" prefHeight="40.0" prefWidth="100.0" text="Pridėti" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <ChoiceBox fx:id="selectedGroup" layoutX="410.0" layoutY="77.0" onAction="#ChangeStudentList" prefHeight="31.0" prefWidth="186.0" />
+                  <Label layoutX="413.0" layoutY="42.0" text="Pasirinkite Grupe">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </content>
+      </Tab>
+      <Tab text="Grupės Lankomumas">
+         <content>
+            <Pane prefHeight="750.0" prefWidth="1000.0">
+               <children>
+                  <CheckListView fx:id="studentList1" layoutX="65.0" layoutY="52.0" prefHeight="660.0" prefWidth="247.0" />
+                  <DatePicker fx:id="date1" layoutX="500.0" layoutY="356.0" prefHeight="39.0" prefWidth="271.0" />
+                  <Label layoutX="138.0" layoutY="14.0" text="Studentai">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="609.0" layoutY="300.0" prefHeight="44.0" prefWidth="54.0" text="Data">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="setAttendence1" layoutX="586.0" layoutY="448.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#studentsAdd" prefHeight="40.0" prefWidth="100.0" text="Pridėti" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </content>
+      </Tab>
+      <Tab text="Studentu Lankomumas">
+         <content>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="55.0">
+                     <children>
+                        <VBox minWidth="120.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="118.0" text="Pirma Data" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="labelis" alignment="CENTER" prefHeight="35.0" prefWidth="118.0" text="Antra Data" textAlignment="CENTER" visible="false">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="-40.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox minWidth="170.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <DatePicker fx:id="pirmaData" prefHeight="33.0" prefWidth="229.0" />
+                              <DatePicker fx:id="antraData" prefHeight="33.0" prefWidth="229.0" visible="false" />
+                           </children>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <CheckBox fx:id="intervalas" mnemonicParsing="false" onAction="#interv" prefHeight="35.0" prefWidth="219.0" text="Ar tai intervalas?">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="32.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                        <Button fx:id="start" mnemonicParsing="false" onAction="#showTable" text="Apskaiciuoti">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="32.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="export" mnemonicParsing="false" onAction="#RunExport" prefHeight="34.0" prefWidth="115.0" text="Eksportuoti">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="32.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="25.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="648.0" prefWidth="1000.0">
+                    <content>
+                        <TableView fx:id="Stalas" prefHeight="615.0" prefWidth="981.0">
+                          <columns>
+                            <TableColumn fx:id="staloVardas" prefWidth="107.0" text="Vardas" />
+                            <TableColumn fx:id="staloID" prefWidth="50.0" text="ID" />
+                              <TableColumn fx:id="staloLankomumas" prefWidth="114.0" text="Lankomumas" />
+                          </columns>
+                        </TableView>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
